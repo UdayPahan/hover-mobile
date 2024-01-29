@@ -1,1 +1,77 @@
 
+
+:root{
+    --clr900: hsl(207, 19%, 9%);
+    --clr100: hsl(0, 0%, 100%);
+    --clr400: hsl(142, 90%, 61%);
+}
+
+.card{
+    color: var(--clr100);
+    background-image: url('https://images.pexels.com/photos/5749190/pexels-photo-5749190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size:cover;
+    padding:10rem 0 0;
+    max-width:35ch;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    transition: transform 500ms ease;
+}
+
+.card:hover{
+    transform: scale(1.06);
+}
+
+.card-containt{
+    padding:1.5rem;
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(255 50% 50% / 0.2) 10%,
+        hsl(0 0% 0% / 1)
+    );
+
+    transform: translateY(70%);
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-containt{
+    transform: translateY(0);
+}
+
+.card-title{
+    position: relative;
+    /* outline: 1px solid red; */
+    width:max-content;
+}
+
+.card-title::after{
+    content: "";
+    position: absolute;
+    height:3px;
+    width: 100%;
+    left:0;
+    bottom:0;
+    background:var(--clr400) ;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after{
+    transform: scaleX(1);
+}
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color:var(--clr900);
+    background-color: var(--clr400);
+    padding:0.5rem;
+    border-radius: 1rem;
+}
+
+.button:hover,
+.button:focus{
+    background-color: var(--clr100);
+}
